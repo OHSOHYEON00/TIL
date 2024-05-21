@@ -228,21 +228,19 @@ When the browser tries to render an HTML document, it creates an object based on
 
 ------------------------------------------------------------
 
-# Execution Context
-https://www.freecodecamp.org/news/how-javascript-works-behind-the-scene-javascript-execution-context/
+# Arrow functions
 
-# `null`, `undefined`, `undeclared`
+# Differences between declaring variables using var, let and const.
 
-# Prototype inheritance works
+# Promise
 
-# Annoymous function
+# Generator functions
 
-1. Explanation
-2. Typical use case
+# Map, Set, WeakMap, WeakSet
 
+# Async/Await 
 
-
-
+# Lexical Scoping
 
 # Event bubbling
 
