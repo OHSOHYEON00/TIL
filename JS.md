@@ -5,7 +5,7 @@
 # Hoisting
 
 ### Definition
-Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to execution of the code.
+Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, classes, or imports to the top of their scope, prior to the execution of the code.
 
 1. Being able to use a variable's value in its scope before the line it is declared. ("Value hoisting") >> **`function`, `async function`**
 2. Being able to reference a variable in its scope before the line it is declared, without throwing a ReferenceError, but the value is always undefined. ("Declaration hoisting") >> **`var`**
@@ -22,9 +22,30 @@ Hoisting refers to the process whereby the interpreter appears to move the decla
 
 # `var`,`let`,`const`
 
+|var|let,const|
+|--|--|
+|function scope|block scope|
+|initialized when it's hoised|Not initialized when it's hoisted|
+
 # Passed by value and Passed by reference
 
 # Higher Order Functions
+
+Higher-order functions operate on other functions, either by taking them as arguments or by returning them, as a function could be an argument or return values.
+
+```
+function higherOrder(fn) {
+  fn();
+}
+higherOrder(function() { console.log("Hello world") });
+
+function higherOrder2() {
+  return function() {
+    return "Do something";
+  }
+}      
+var x = higherOrder2();
+```
 
 # `this`
 
@@ -73,9 +94,24 @@ var detailsOfPerson1 = bikeDetails.displayDetails.bind(person1, "TS0122", "Bulle
 detailsOfPerson1(); 
 ```
 
-# Scope, Scope chain
+# Scope
+
+### Definition
+Scope lets us know where variables and functions we can or cannot access.
+
+### Types
+
+1. Global Scope
+2. Local or Function Scope: Any variables or functions declared inside a function have local/function scope
+3. Block Scope: Any variable declared inside a block { }. It's related to using `let` and `const`. ex) for loop, while, ...
+
+# Scope Chain
+
+### Definition
+It is that JS engine uses scopes to find variables.
 
 # Closure
+
 
 # Object prototypes
 
@@ -83,16 +119,27 @@ detailsOfPerson1();
 
 # Types of Errors in JS
 
-1. Syntax Error
-2. Logical Error
+1. Syntax Error: mistakes or spelling problems in the code
+2. Logical Error: mistakes occur when the syntax is proper but the logic or program is incorrect.
 
 # Memoization
 
 # Constructor function
 
-# DOM
+### Definition
+Constructor functions are used to create objects in javascript. 
+
+- The name should be always written in Pascal.
+- When we want to create a new object of the constructor function, we need to use the `new` keyword (class, instance)
+
+
+# DOM (Document Object Model)
+
+When the browser tries to render an HTML document, it creates an object based on the HTML document called DOM. Using DOM, we can manipulate or change various elements inside the HTML document.
 
 # client-side vs server-side in JS
+
+<img width="476" alt="image" src="https://github.com/OHSOHYEON00/TIL/assets/132743799/352245c1-d03f-4939-91b1-1a2aea66f2f5">
 
 ------------------------------------------------------------
 
