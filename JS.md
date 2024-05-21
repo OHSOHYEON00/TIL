@@ -29,6 +29,11 @@ Hoisting refers to the process whereby the interpreter appears to move the decla
 
 # Passed by value and Passed by reference
 
+Primitive data types are passed by value and non-primitive data types are passed by reference.
+- primitive data types when passed to another variable, are passed by value. Instead of just assigning the same address to another variable, the value is passed and new space of memory is created.
+- while passing non-primitive data types, the assigned operator directly passes the address (reference).
+
+
 # Higher Order Functions
 
 Higher-order functions operate on other functions, either by taking them as arguments or by returning them, as a function could be an argument or return values.
@@ -108,14 +113,78 @@ Scope lets us know where variables and functions we can or cannot access.
 # Scope Chain
 
 ### Definition
-It is that JS engine uses scopes to find variables.
+It is that JavaScript engine uses scopes to find variables.
 
 # Closure
+
+### What is a closure in JavaScript?
+You have a closure when a function reads or modifies the value of a variable defined outside its context.
+The important thing is that using closure, the inner function can access the variables in the outer scope although the outer scope(function) finishes its execution cycle.
+
+```
+function wonderfulFunction() {
+    let count = 1
+    function counter() {
+        count++
+        console.log(count)
+    }
+   setInterval(counter, 2000)
+}
+wonderfulFunction()
+```
+Even after the parent function `wonderfulFunction` finishes its execution cycle, the function `counter` and the value count will still "live".
+
+### What can I do with closures in JavaScript?
+
+1. Currying - create HTML elements
+```
+function createElement(element){
+    const el = document.createElement(element)
+    return function(content) {
+        return el.textNode = content
+    }
+}
+
+const bold = crearElement('b')
+const italic = createElement('i')
+const content = 'My content'
+const myElement  = bold(italic(content)) // <b><i>My content</i></b>
+```
+
+2. Event Listeners
+
+When you want to use another function as an event listener which takes argument.
+```
+const onItemClick = title => () => alert(`Clcked ${title}`)
+
+return (
+  <Container>
+{items.map(item => {
+return (
+   <RenderItem onClick={onItemClick(item.title)}>
+    <Title>{item.title}</Title>
+  </RenderItem>
+)
+})}
+</Container>
+)
+```
+
+https://www.freecodecamp.org/news/closures-in-javascript/
+https://www.freecodecamp.org/news/scope-and-closures-in-javascript/
 
 
 # Object prototypes
 
+### What is `prototype` and `prototype chain`
+
+Every object in JavaScript has a built-in property, which is called its **prototype**.
+The prototype is itself an object, so the prototype will have its own prototype, making what's called a **prototype chain**.
+The chain ends when we reach a prototype that has `null` for its own prototype.
+
 # Callbacks
+
+callback functions: Functions that are used as an argument to another function (As functions are treated as the first-class citizens in JavaScript)
 
 # Types of Errors in JS
 
@@ -123,6 +192,22 @@ It is that JS engine uses scopes to find variables.
 2. Logical Error: mistakes occur when the syntax is proper but the logic or program is incorrect.
 
 # Memoization
+
+### Definition
+In programming, memoization is an optimization technique that makes applications more efficient and hence faster.
+
+**How does it work?**
+By storing in cache the output of a function, and making the function check if each required computation is in the cache before computing it.
+
+Memoization is a form of caching where the return value of a function is cached based on its parameters. If the parameter of that function is not changed, the cached version of the function is returned.
+
+### Memoization in JavaScript
+The concept of memoization in JavaScript relies **Closures and Higher Order Functions**
+https://tjinlag.medium.com/memoize-javascript-function-638f3b7c80e9
+
+### Memoization in React
+To optimize our application by avoiding unnecessary component re-render using memorization.
+Components re-render because a change in state or a change in props. These two factors should be cached to avoid unnecessary re-renders.
 
 # Constructor function
 
