@@ -1,5 +1,6 @@
 # Advantages of using React
 - building complex and reusable user interface components
+- React works by constructing the screen on a component-by-component basis, triggering a re-render when a component's state changes, comparing the previous re-render to the current re-render via the Virtual DOM, and only reflecting the changes in the DOM.
 
 # Pros and Cons of SPA
 
