@@ -85,11 +85,18 @@ Components are in the hierarchy. To pass data between components, we pass props 
 
 # React hooks
 
+---------------------------------
+
 # How to prevent re-renders
 
 # Techniques to optimiza React app
 
 # Higher Order Components
+
+### Definition
+Higher-Order Component(HOC) is a function that takes in a component and returns a new component.
+
+<img width="428" alt="image" src="https://github.com/OHSOHYEON00/TIL/assets/132743799/907d9ad1-17cd-42fd-b89f-6e04248145d5">
 
 # Component Lifecycle
 
